@@ -9,8 +9,16 @@ they need multiple corresponding entries from the NSA database whose geographic 
 Additionally, record timestamps should be no greater than 10 minutes apart.
 
 Downloads:
-file provided by the USCG that contains metadata about the unknown signal (USCG.log)
-NSA database of signals (database.db)
+file provided by the USCG that contains metadata about the unknown signal ([USCG.log](https://nsa-codebreaker.org/files/task1/USCG.log?1707529470))
+NSA database of signals ([database.db](https://nsa-codebreaker.org/files/task1/database.db?1707529470))
 
 Prompt:
 Provide database record IDs, one per line, that fit within the parameters specified above.
+
+`cat UCSG.log`  
+This will output the contents of the file, the data inside is what you'll use to find
+corrosponding entries within `database.db`
+`sqlitebrowser --table location database.db`  
+In sqlite find the latitude and longitude with the provided data and submit it in the format requested  
+A program can be created to read the UCSH.log and database.db files to find the latitude and logitude
+which most closley matches the provided information.
