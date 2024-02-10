@@ -1,4 +1,4 @@
-#Task 0 - (Community of Practice, Discord Server)
+# Task 0 - (Community of Practice, Discord Server)
 
 As a participant in the Codebreaker Challenge, you are invited to join the New Mexico Tech Codebreaker Challenge Community of Practice! 
 This is the 3rd year that NMT has partnered with the NSA Codebreaker Challenge. 
