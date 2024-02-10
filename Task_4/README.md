@@ -9,7 +9,7 @@ You can emulate the device using the QEMU docker container from task 3.
 
 Downloads:
 main SD card image (sd.img.bz2)
-USB drive image (usb.img.bz2) [unavailable until prerequisites are completed]
+USB drive image (usb.img.bz2)
 Linux kernel (kernel8.img.bz2)
 Device tree blob file for emulation (bcm2710-rpi-3-b-plus.dtb.bz2)
 
