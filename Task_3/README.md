@@ -18,3 +18,24 @@ U-Boot program loader binary (u-boot.bin)
 Recovered Device tree blob file (device_tree.dtb)
 Docker source files to build the QEMU/aarch64 image (cbc_qemu_aarch64-source.tar.bz2)
 Docker image for QEMU running aarch64 binaries (cbc_qemu_aarch64-image.tar.bz2)
+
+Open u-boot.bin in Ghidra analyze the binary disassembled ARM assembly
+find function handling cryptographic key
+Install dtc sudo apt-get install dtc
+dtc -I dts -O dtb -o  
+```
+sudo docker run -it --rm --device=/dev/net/tun:/dev/net/tun --cap-add NET_ADMIN -v $(pwd)/myfiles:/myfiles cbc_qemu_aarch64:latest
+sudo docker ps | grep cbc_qemu_aarch64:latest
+sudo docker exec -it <CONTAINER ID> /bin/bash
+
+# window 1
+nc -l 10000
+
+# window 2
+nc -l 10001
+
+export UBOOT=/myfiles/u-boot.bin
+export DTB=/myfiles/device_tree.dtb
+
+qemu-system-aarch64 -M virt,secure=on -cpu cortex-a53 -bios /myfiles/u-boot.bin -dtb /myfiles/device_tree.dtb -display none -chardev socket,host=localhost,port=10000,id=uart0 -chardev socket,host=localhost,port=10001,id=uart1 -serial chardev:uart0 -serial chardev:uart1
+```
