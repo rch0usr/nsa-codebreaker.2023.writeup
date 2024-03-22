@@ -21,8 +21,8 @@ Docker image for QEMU running aarch64 binaries (cbc_qemu_aarch64-image.tar.bz2)
 
 Open u-boot.bin in Ghidra analyze the binary disassembled ARM assembly
 find function handling cryptographic key
-Install dtc sudo apt-get install dtc
-dtc -I dts -O dtb -o  
+Install dtc `sudo apt-get install dtc`
+Decompile dtb to dtc `dtc -I dts -O dtb -o`
 ```
 sudo docker run -it --rm --device=/dev/net/tun:/dev/net/tun --cap-add NET_ADMIN -v $(pwd)/myfiles:/myfiles cbc_qemu_aarch64:latest
 sudo docker ps | grep cbc_qemu_aarch64:latest
